@@ -39,7 +39,7 @@ There are more datatypes for columns, including complex ones that can hold multi
 
 ### Deleting tables
 
-To delete a table, use `DROP TABLE <tablename>`. If you want PostgreSQL to not throw an error if the table does not exist -- this is a nice thing to put at the top of a schema definition file -- use `DROP TABLE <tablename> IF EXISTS`.
+To delete a table, use `DROP TABLE <tablename>`. If you want PostgreSQL to not throw an error if the table does not exist -- this is a nice thing to put at the top of a schema definition file -- use `DROP TABLE IF EXISTS <tablename>`.
 
 ### References
 
