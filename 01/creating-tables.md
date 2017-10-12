@@ -14,8 +14,8 @@ CREATE TABLE students (
   graduated BOOLEAN NOT NULL DEFAULT 'f',
   cohort INTEGER NOT NULL,
   resume TEXT,
-  financial_aid_per_year NUMERIC(7,2),
-  enrolled_at TIMESTAMP NOT NULL
+  financial_aid NUMERIC(7,2),
+  enrolled_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 ```
 
@@ -27,8 +27,8 @@ CREATE TABLE students (
 * `graduated BOOLEAN NOT NULL DEFAULT 'f'`: The `graduated` column is a true/false value. It cannot be null, but if you insert a row and do not set the value, it will automatically be set to false.
 * `cohort INTEGER NOT NULL`: The `cohort` column is an integer value and cannot be null.
 * `resume TEXT`: The `resume` column stores strings of arbitrary length. It can be null.
-* `financial_aid_per_year NUMERIC(7,2)`: The `financial_aid_per_year` column is a decimal value with precision (total number of digits) of 7 and scale (digits right of the decimal point) of 2. It can be null.
-* `enrolled_at TIMESTAMP NOT NULL`: The `enrolled_at` column is a date and time value and cannot be null.
+* `financial_aid NUMERIC(7,2)`: The `financial_aid_per_year` column is a decimal value with precision (total number of digits) of 7 and scale (digits right of the decimal point) of 2. It can be null.
+* `enrolled_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP`: The `enrolled_at` column is a date and time value and cannot be null. If not specified, the current date and time are used.
 
 There are more datatypes for columns, including complex ones that can hold multiple values. Some of the common simple ones are:
 
