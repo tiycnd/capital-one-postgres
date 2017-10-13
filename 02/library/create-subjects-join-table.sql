@@ -16,9 +16,9 @@ INSERT INTO subjects (name)
   SELECT distinct(unnest(string_to_array(subjects, '|'))) AS subject 
   FROM books;
 
-CREATE TEMP TABLE mg AS (SELECT id AS book_id, unnest(string_to_array(subjects, '|')) AS subject_name FROM books);
+CREATE TEMP TABLE bs AS (SELECT id AS book_id, unnest(string_to_array(subjects, '|')) AS subject_name FROM books);
 
 INSERT INTO book_subjects
-  SELECT mg.book_id, subjects.id FROM mg INNER JOIN subjects ON mg.subject_name = subjects.name;
+  SELECT bs.book_id, subjects.id FROM bs INNER JOIN subjects ON bs.subject_name = subjects.name;
 
--- ALTER TABLE books DROP COLUMN subjects;
+ALTER TABLE books DROP COLUMN subjects;

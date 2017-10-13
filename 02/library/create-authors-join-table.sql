@@ -16,9 +16,9 @@ INSERT INTO authors (name)
   SELECT distinct(unnest(string_to_array(author, '|'))) AS author 
   FROM books;
 
-CREATE TEMP TABLE mg AS (SELECT id AS book_id, unnest(string_to_array(author, '|')) AS author_name FROM books);
+CREATE TEMP TABLE ba AS (SELECT id AS book_id, unnest(string_to_array(author, '|')) AS author_name FROM books);
 
 INSERT INTO book_authors
-  SELECT mg.book_id, authors.id FROM mg INNER JOIN authors ON mg.author_name = authors.name;
+  SELECT ba.book_id, authors.id FROM ba INNER JOIN authors ON ba.author_name = authors.name;
 
 ALTER TABLE books DROP COLUMN author;
