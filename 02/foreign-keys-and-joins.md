@@ -115,7 +115,7 @@ LIMIT 2;
 -- -[ RECORD 2 ]----------------
 -- id     | 183
 -- title  | Spring is Here
--- studio |
+-- studio | 
 ```
 
 `RIGHT JOIN` and `FULL JOIN` also exist, allowing for all rows on the right side of the join, or all rows on both sides of the join respectively.

@@ -22,4 +22,4 @@ INSERT INTO movie_actors
   SELECT ma.movie_id, actors.id FROM ma INNER JOIN actors ON ma.actor_name = actors.name;
 
 ALTER TABLE movies
-  DROP COLUMN actors;
+  DROP COLUMN stars;

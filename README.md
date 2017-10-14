@@ -6,7 +6,7 @@
 - [x] Updating and deleting data
 - [x] Aggregations
 - [x] Foreign keys and joins
-- [ ] Indexes
+- [x] Indexes
 - [ ] Understanding EXPLAIN
 - [ ] Using PostgreSQL-specific data types: array, HStore, and JSON
 - [ ] Views
