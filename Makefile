@@ -1,4 +1,4 @@
-.PHONY: library-01 library-02 movies-01 movies-02
+.PHONY: library-01 library-02 movies-01 movies-02 movies-03
 
 library-01:
 	psql library < 01/library/books-schema.sql
@@ -13,3 +13,9 @@ movies-01:
 
 movies-02: movies-01
 	cat 02/movies/*.sql | psql movies
+
+movies-03: movies-02
+	psql movies < 03/movies/create-reviewers.sql
+	psql movies < 03/movies/reviewers.sql
+	psql movies < 03/movies/create-countries.sql
+
