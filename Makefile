@@ -18,4 +18,4 @@ movies-03: movies-02
 	psql movies < 03/movies/create-reviewers.sql
 	psql movies < 03/movies/reviewers.sql
 	psql movies < 03/movies/create-countries.sql
-
+	psql movies < 03/movies/views.sql

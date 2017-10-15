@@ -9,6 +9,6 @@
 - [x] Indexes
 - [ ] Understanding EXPLAIN
 - [ ] Using PostgreSQL-specific data types: array, HStore, and JSON
-- [ ] Views
+- [x] Views
 - [ ] Transactions
 - [ ] Stored procedures
