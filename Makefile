@@ -8,20 +8,12 @@ library-02: library-01
 	cat 02/library/create-*.sql | psql library
 	psql -q library < 02/library/patrons.sql
 
-movies-01:
-	psql movies < 01/movies/schema.sql
-	psql movies < 01/movies/movies.sql
+movies:
+	dropdb movies
+	createdb movies
+	psql movies < movies.sql
 
-movies-02: movies-01
-	cat 02/movies/*.sql | psql movies
-
-movies-03: movies-02
-	psql movies < 03/movies/create-reviewers.sql
-	psql movies < 03/movies/reviewers.sql
-	psql movies < 03/movies/create-countries.sql
-
-movies-04: movies-03
-	psql movies < 04/movies/views.sql
-	psql movies < 04/movies/create-credits.sql
-	psql movies < 04/movies/functions.sql
-
+movies-schema-only:
+	dropdb movies
+	createdb movies
+	psql movies < movies-schema-only.sql
