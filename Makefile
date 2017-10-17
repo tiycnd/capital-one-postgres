@@ -5,7 +5,8 @@ library-01:
 	pgloader 01/library/books.load
 
 library-02: library-01
-	cat 02/library/*.sql | psql library
+	cat 02/library/create-*.sql | psql library
+	psql -q library < 02/library/patrons.sql
 
 movies-01:
 	psql movies < 01/movies/schema.sql
