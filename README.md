@@ -10,5 +10,5 @@
 - [ ] Understanding EXPLAIN
 - [ ] Using PostgreSQL-specific data types: array, HStore, and JSON
 - [x] Views
-- [ ] Transactions
+- [x] Transactions
 - [ ] Stored procedures

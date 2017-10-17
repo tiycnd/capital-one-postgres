@@ -13,5 +13,6 @@ CREATE TABLE reviews (
   reviewer_id INTEGER NOT NULL REFERENCES reviewers(id),
   movie_id INTEGER NOT NULL REFERENCES movies(id),
   score INTEGER NOT NULL,
+  UNIQUE (reviewer_id, movie_id),
   CHECK (score >= 1 AND score <= 5)
 );

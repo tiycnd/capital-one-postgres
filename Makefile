@@ -19,4 +19,9 @@ movies-03: movies-02
 	psql movies < 03/movies/create-reviewers.sql
 	psql movies < 03/movies/reviewers.sql
 	psql movies < 03/movies/create-countries.sql
-	psql movies < 03/movies/views.sql
+
+movies-04: movies-03
+	psql movies < 04/movies/views.sql
+	psql movies < 04/movies/create-credits.sql
+	psql movies < 04/movies/functions.sql
+
