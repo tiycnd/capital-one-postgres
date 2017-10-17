@@ -7,7 +7,7 @@ Imagine you wish to weight the review scores of reviewers by how many reviews th
 To get the weight of each reviewer, your SQL would look like:
 
 ```sql
-SELECT rr.id, POWER(1.2, COUNT(rw.score)) AS weight 
+SELECT rr.id, POWER(1.2, COUNT(1)) AS weight 
 FROM reviewers rr 
 JOIN reviews rw ON rr.id = rw.reviewer_id 
 GROUP BY rr.id;
@@ -24,7 +24,7 @@ CREATE OR REPLACE VIEW reviewers_weighted AS
   JOIN reviews rw ON rr.id = rw.reviewer_id 
   GROUP BY rr.id;
 
-SELECT * FROM reviewers_weight LIMIT 5;
+SELECT * FROM reviewers_weighted LIMIT 5;
  id |  username  |     avg_score      |        weight        
 ----+------------+--------------------+----------------------
   1 | gmcandie0  | 2.9333333333333333 | 237.3763137997698063
@@ -40,10 +40,12 @@ Now we can use that view to calculate weighted scores for movies.
 ```sql
 SELECT rw.movie_id,
   ROUND(AVG(rw.score), 2) AS avg_score, 
-  ROUND(SUM(rw.score * rrw.weight) / SUM(rrw.weight), 2) AS weighted_score 
+  ROUND(SUM(rw.score * rrw.weight) / SUM(rrw.weight), 2) AS weighted_score,
+  ROUND(SUM(rw.score * rrw.weight) / SUM(rrw.weight), 2) - ROUND(AVG(rw.score), 2) AS difference
 FROM reviews rw 
 JOIN reviewers_weighted rrw ON rw.reviewer_id = rrw.id 
 GROUP BY rw.movie_id 
+ORDER BY difference DESC
 LIMIT 5;
 
 --  movie_id | avg_score | weighted_score 

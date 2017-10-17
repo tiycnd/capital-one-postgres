@@ -1,5 +1,0 @@
-- Patrons can check out books.
-- Books know if they are currently checked out and by who.
-- When a book is checked out, a record is kept of the book and checkout timestamp, but not of the patron. Create a function to checkout books and another to check them back in.
-- Write a query to show all overdue books and turn it into a function.
-- Write a query to add fine records for the current day. This will be run each day. Just in case it's run multiple times, use INSERT ON CONFLICT.

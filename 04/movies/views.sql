@@ -4,10 +4,16 @@ DROP VIEW IF EXISTS reviewers_weighted;
 CREATE VIEW reviewers_weighted AS 
   SELECT rr.id, rr.username,
     AVG(rw.score) AS avg_score, 
-    POWER(1.2, COUNT(rw.score)) AS weight 
+    POWER(1.2, COUNT(1)) AS weight 
   FROM reviewers rr 
   JOIN reviews rw ON rr.id = rw.reviewer_id 
   GROUP BY rr.id;
+
+CREATE VIEW reviewers_weighted AS 
+  SELECT rr.id, rr.username,
+    reviewer_weight(rr.id) AS weight 
+  FROM reviewers rr;
+
 
 CREATE MATERIALIZED VIEW movie_scores AS 
   SELECT rw.movie_id, 
