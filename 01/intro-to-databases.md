@@ -1,7 +1,3 @@
-[callout-info]
-This content was adapted from the normal Iron Yard back-end curriculum.
-[/callout-info]
-
 ## Databases, tables, rows, and columns
 
 ### Terminology

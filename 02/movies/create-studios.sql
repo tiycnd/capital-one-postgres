@@ -11,7 +11,9 @@ INSERT INTO studios (name)
 ALTER TABLE movies
   ADD COLUMN studio_id INTEGER REFERENCES studios(id);
 
-UPDATE movies SET studio_id = (SELECT id FROM studios WHERE studios.name = movies.studio);
+UPDATE movies 
+SET studio_id = 
+(SELECT id FROM studios WHERE studios.name = movies.studio);
 
 ALTER TABLE movies
   DROP COLUMN studio;
