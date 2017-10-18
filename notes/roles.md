@@ -2,7 +2,7 @@
 
 Roles are used in PostgreSQL to manage users and groups. Users and groups are not separate entities -- both are roles.
 
-When you use `createuser` and `dropuser` on the command line, you are creating and destroying roles. There's some options with `createuser` to control access:
+When you use `creategSQL function (Experimental)user` and `dropuser` on the command line, you are creating and destroying roles. There's some options with `createuser` to control access:
 
 ```
   -d, --createdb            role can create new databases
