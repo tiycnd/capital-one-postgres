@@ -8,3 +8,5 @@
 * [Aggregations](notes/aggregations.md)
 * [Indexes](notes/indexes.md)
 * [Transactions](notes/transactions.md)
+
+* [**Bonus**: Database Normalization](https://www.guru99.com/database-normalization.html)
