@@ -1,14 +1,10 @@
-## Topics covered
+# Table of Contents
 
-- [x] Creating databases and tables
-- [x] Inserting data
-- [x] Selecting data
-- [x] Updating and deleting data
-- [x] Aggregations
-- [x] Foreign keys and joins
-- [x] Indexes
-- [ ] Understanding EXPLAIN
-- [ ] Using PostgreSQL-specific data types: array, HStore, and JSON
-- [x] Views
-- [x] Transactions
-- [ ] Stored procedures
+* [Intro to Databases](notes/intro-to-databases.md)
+* [Creating Tables](notes/creating-tables.md)
+* [Inserting Data](notes/inserting-data.md)
+* [Selecting and Updating Data](notes/selecting-and-updating-data.md)
+* [Foreign Keys and Joins](notes/foreign-keys-and-joins.md)
+* [Aggregations](notes/aggregations.md)
+* [Indexes](notes/indexes.md)
+* [Transactions](notes/transactions.md)

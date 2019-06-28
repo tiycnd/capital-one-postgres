@@ -19,12 +19,6 @@
   
 ### Installing PostgreSQL
 
-#### Windows
-
-Follow the directions at <https://www.postgresql.org/download/windows/>.
-
-#### OS X
-
 If you are using Homebrew, run:
 
 ```
@@ -34,18 +28,13 @@ brew services start postgresql
 
 Alternatively, use [Postgres.app](https://postgresapp.com/).
 
-#### Linux 
-
-Use your package manager.
 
 ### Connecting to PostgreSQL
 
-Before we connect to PostgreSQL, we need a user and a database. Creating a user will vary based on your operating system, and your installation procedure may have set it up for you. For Debian-based Linux systems, you have to change to the `postgres` user and have them create it. If your username is `user`, then the commands would be:
+Before we connect to PostgreSQL, we need a user and a database. Creating a user will vary based on your operating system, and your installation procedure may have set it up for you. If your username is `user`, then the commands would be:
 
 ```
-sudo su - postgres
 createuser -d user
-exit
 ```
 
 To create a database, run:
